@@ -1,0 +1,32 @@
+{
+  "productList": [
+    {
+      "productName": "strawberry",
+      "Category": "Fruits",
+      "freshness": "Brand New",
+      "price": 15,
+      "comment": "FRIUT",
+      "date": "2023-02-28T18:30:00.000Z",
+      "id": 10
+    },
+    {
+      "productName": "apple",
+      "Category": "Fruits",
+      "freshness": "Brand New",
+      "price": 5,
+      "comment": "noo",
+      "date": "2020-10-19T18:30:00.000Z",
+      "id": 11
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

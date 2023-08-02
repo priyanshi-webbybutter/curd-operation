@@ -1,0 +1,59 @@
+<h1 mat-dialog-title>Add prodruct form</h1>
+<div mat-dialog-content>
+    <form [formGroup]= "productForm">
+    <!-- Name -->
+    <mat-form-field appearance="outline">
+        <mat-label>Product Name</mat-label>
+        <input formControlName="productName" matInput placeholder="Product Name">
+      </mat-form-field>
+      <!-- Name end -->
+
+      <!-- category -->
+      <mat-form-field appearance="outline">
+        <mat-label>Product Category</mat-label>
+        <mat-select formControlName="Category" placeholder="Category">
+            <mat-option value="Fruits">Fruits</mat-option>
+            <mat-option value="Vegetable">Vegetable</mat-option>
+            <mat-option value="Electronics">Electronics</mat-option>
+        </mat-select>
+      </mat-form-field>
+       <!-- end -->
+       <!-- date -->
+       <div>
+       <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input formControlName="date" matInput [matDatepicker]="picker">
+        
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      </div> 
+     <!-- end -->
+     <!-- radio button -->
+      <div>
+        <label for=""><h2>Product freshness</h2></label>
+        <mat-radio-group formControlName="freshness" class="example-radio-group">
+            <mat-radio-button *ngFor= "let fresh of freshnessList" [value]="fresh" class="example-radio-button">
+           {{fresh}}
+            </mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <!-- end -->
+    <mat-form-field appearance="outline">
+        <mat-label >Price</mat-label>
+        <input formControlName="price" matInput type="number" placeholder="Product Name">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>comment</mat-label>
+       <textarea formControlName="comment" matInput></textarea>
+      </mat-form-field>
+
+      <div mat-dialog-actions [align]="'end'">  
+        <button mat-raised-button color="warn" mat-dialog-close>cancel</button>
+        <button mat-raised-button color="primary" (click)="AddProduct()">{{actionbtn}}</button>
+      </div>
+     </form>
+</div>
